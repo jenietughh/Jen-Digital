@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenietah Mendoza — Technical Support & Customer Experience Specialist | Haute Couture Edition</title>
+    <meta name="description" content="Official professional portfolio of Jenietah Mendoza. Technical support specialist, customer experience expert, and healthcare administration professional.">
+    
+    <!-- Favicon using JM Monogram -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230b0b0b'/><text x='50%' y='53%' dominant-baseline='middle' text-anchor='middle' font-family='Didot, Bodoni MT, serif' font-weight='400' font-size='48' fill='%23f4f1ea'>JM</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dior: {
+                            black: '#0b0b0b',
+                            charcoal: '#141414',
+                            surface: '#1c1c1c',
+                            border: '#2a2a2a',
+                            ecru: '#f4f1ea',
+                            gold: '#c5a059',
+                            mutedgold: '#9a7b38',
+                            taupe: '#8b857b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Didot', 'Bodoni MT', 'Baskerville', 'Georgia', 'serif'],
+                        sans: ['Inter', 'Helvetica Neue', 'sans-serif'],
+                        mono: ['Courier New', 'monospace']
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter & Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c5a059;
+        }
+        .dior-card {
+            background: #141414;
+            border: 1px solid #222222;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dior-card:hover {
+            border-color: #c5a059;
+            transform: translateY(-3px);
+        }
+        .dior-nav {
+            background: rgba(11, 11, 11, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .editorial-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.02em;
+        }
+        @media print {
+            body { background: #ffffff !important; color: #0b0b0b !important; }
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            .dior-card { background: #ffffff !important; border: 1px solid #cccccc !important; }
+        }
+        .print-only { display: none; }
+    </style>
+</head>
+<body class="bg-dior-black text-dior-ecru font-sans antialiased selection:bg-dior-gold selection:text-dior-black relative">
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-500 ease-out bg-dior-surface border border-dior-gold text-dior-ecru px-6 py-4 shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-dior-gold text-base"></i>
+        <span id="toast-message" class="text-xs uppercase tracking-widest font-mono">Email copied to clipboard successfully</span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-40 dior-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16 h-24 flex items-center justify-between">
+            <!-- Monogram Brand Logo -->
+            <a href="#home" class="flex items-center gap-4 group focus:outline-none">
+                <div class="w-11 h-11 border border-dior-gold/40 flex items-center justify-center font-serif text-lg tracking-widest text-dior-ecru group-hover:border-dior-gold group-hover:bg-dior-gold group-hover:text-dior-black transition-all duration-300">
+                    JM
+                </div>
+                <div>
+                    <span class="block font-serif tracking-[0.25em] text-xs uppercase text-dior-ecru">Jenietah Mendoza</span>
+                    <span class="block font-mono text-[9px] text-dior-gold tracking-widest uppercase mt-0.5">Haute Support & CX</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#home" class="text-[11px] uppercase tracking-[0.2em] text-dior-ecru/70 hover:text-dior-gold transition-colors">Home</a>
+                <a href="#about" class="text-[11px] uppercase tracking-[0.2em] text-dior-ecru/70 hover:text-dior-gold transition-colors">Atelier</a>
+                <a href="#experience" class="text-[11px] uppercase tracking-[0.2em] text-dior-ecru/70 hover:text-dior-gold transition-colors">Experience</a>
+                <a href="#skills" class="text-[11px] uppercase tracking-[0.2em] text-dior-ecru/70 hover:text-dior-gold transition-colors">Expertise</a>
+                <a href="#contact" class="text-[11px] uppercase tracking-[0.2em] text-dior-ecru/70 hover:text-dior-gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openResumeModal()" class="px-6 py-2.5 border border-dior-gold/60 text-dior-ecru hover:bg-dior-gold hover:text-dior-black hover:border-dior-gold font-mono text-[10px] uppercase tracking-[0.25em] transition-all duration-300">
+                    Collection / Resume
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" aria-label="Toggle Navigation" class="md:hidden p-2 text-dior-ecru hover:text-dior-gold focus:outline-none">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dior-charcoal border-t border-dior-border px-8 py-8 space-y-5">
+            <nav class="flex flex-col space-y-4">
+                <a href="#home" class="mobile-nav-link text-xs uppercase tracking-[0.2em] text-dior-ecru hover:text-dior-gold">Home</a>
+                <a href="#about" class="mobile-nav-link text-xs uppercase tracking-[0.2em] text-dior-ecru hover:text-dior-gold">Atelier</a>
+                <a href="#experience" class="mobile-nav-link text-xs uppercase tracking-[0.2em] text-dior-ecru hover:text-dior-gold">Experience</a>
+                <a href="#skills" class="mobile-nav-link text-xs uppercase tracking-[0.2em] text-dior-ecru hover:text-dior-gold">Expertise</a>
+                <a href="#contact" class="mobile-nav-link text-xs uppercase tracking-[0.2em] text-dior-ecru hover:text-dior-gold">Contact</a>
+            </nav>
+            <div class="pt-4 border-t border-dior-border">
+                <button onclick="openResumeModal()" class="w-full py-3 bg-dior-gold text-dior-black font-mono text-[10px] uppercase tracking-[0.25em]">
+                    Collection / Resume
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="home" class="pt-28">
+
+        <!-- HERO SECTION -->
+        <section class="min-h-[calc(100vh-7rem)] flex items-center py-20 px-6 lg:px-16 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
+                <!-- Left Column -->
+                <div class="lg:col-span-7 space-y-8 text-left">
+                    <div class="inline-flex items-center gap-3 px-3.5 py-1.5 bg-dior-surface border border-dior-border text-dior-gold text-[10px] font-mono tracking-[0.25em] uppercase">
+                        <span class="w-1.5 h-1.5 rounded-full bg-dior-gold animate-pulse"></span>
+                        <span>Haute Support & Administration</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-light editorial-title text-dior-ecru leading-[1.1]">
+                        I Turn Complex Problems Into <span class="text-dior-gold italic font-normal">Seamless Masterpieces.</span>
+                    </h1>
+
+                    <p class="text-sm sm:text-base text-dior-ecru/70 max-w-xl font-light leading-relaxed">
+                        I’m Jenietah Mendoza, a technical support and customer experience professional based in Calumpit, Bulacan, specializing in technical troubleshooting, high-volume support, and confidential healthcare administration with uncompromising precision.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1.5 bg-dior-surface border border-dior-border text-dior-ecru/90 text-xs font-mono tracking-wider">Technical Support</span>
+                        <span class="px-3.5 py-1.5 bg-dior-surface border border-dior-border text-dior-ecru/90 text-xs font-mono tracking-wider">Customer Experience</span>
+                        <span class="px-3.5 py-1.5 bg-dior-surface border border-dior-border text-dior-ecru/90 text-xs font-mono tracking-wider">Healthcare Admin</span>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-5 pt-4">
+                        <a href="#experience" class="px-8 py-4 bg-dior-ecru text-dior-black font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-dior-gold transition-all duration-300 flex items-center gap-3">
+                            <span>Explore Experience</span>
+                            <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                        </a>
+                        <button onclick="openResumeModal()" class="px-8 py-4 bg-transparent border border-dior-border text-dior-ecru font-mono text-[10px] uppercase tracking-[0.25em] hover:border-dior-gold hover:text-dior-gold transition-all duration-300">
+                            Download Curriculum Vitae
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Haute Monogram Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md aspect-[4/5] dior-card p-10 flex flex-col justify-between relative shadow-2xl">
+                        <div class="absolute inset-0 border border-dior-gold/15 pointer-events-none m-3"></div>
+                        <div class="flex justify-between items-center text-[10px] font-mono tracking-[0.2em] text-dior-taupe uppercase z-10">
+                            <span>Maison Mendoza</span>
+                            <span>Bulacan, PH</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center my-auto z-10">
+                            <div class="w-32 h-32 border border-dior-gold/40 flex items-center justify-center bg-dior-surface/50 shadow-inner">
+                                <span class="text-5xl font-serif text-dior-ecru tracking-widest">JM</span>
+                            </div>
+                            <h2 class="mt-8 text-xl font-serif tracking-wide text-dior-ecru">Jenietah Mendoza</h2>
+                            <p class="text-xs text-dior-gold font-mono tracking-[0.2em] uppercase mt-2">Specialist Support & Admin</p>
+                        </div>
+                        <div class="bg-dior-surface p-4 border border-dior-border flex items-center justify-between z-10">
+                            <span class="text-[11px] text-dior-ecru/70 font-mono tracking-widest">Verification</span>
+                            <span class="text-[11px] font-mono text-dior-gold tracking-widest uppercase">Verified Top Agent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL HIGHLIGHTS -->
+        <section class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-dior-border">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="dior-card p-10 space-y-5">
+                    <span class="text-xs font-mono text-dior-gold uppercase tracking-[0.25em]">01 / Recognition</span>
+                    <h3 class="text-4xl font-light editorial-title text-dior-ecru">3 Consecutive <span class="text-dior-gold italic">Months</span></h3>
+                    <p class="text-xs uppercase tracking-[0.15em] text-dior-ecru/90 font-medium">Recognized Top Agent</p>
+                    <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">Consistent top performance ranking based on overall service quality, customer metrics, and productivity KPIs.</p>
+                </div>
+
+                <div class="dior-card p-10 space-y-5">
+                    <span class="text-xs font-mono text-dior-gold uppercase tracking-[0.25em]">02 / Multitasking</span>
+                    <h3 class="text-4xl font-light editorial-title text-dior-ecru">Up to 5 <span class="text-dior-gold italic">Chats</span></h3>
+                    <p class="text-xs uppercase tracking-[0.15em] text-dior-ecru/90 font-medium">Simultaneous Streams</p>
+                    <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">Successfully managed concurrent customer conversations while maintaining absolute accuracy, empathy, and speed.</p>
+                </div>
+
+                <div class="dior-card p-10 space-y-5">
+                    <span class="text-xs font-mono text-dior-gold uppercase tracking-[0.25em]">03 / Expertise</span>
+                    <h3 class="text-4xl font-light editorial-title text-dior-ecru">2 Core <span class="text-dior-gold italic">Domains</span></h3>
+                    <p class="text-xs uppercase tracking-[0.15em] text-dior-ecru/90 font-medium">Tech & Healthcare Admin</p>
+                    <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">Comprehensive proficiency spanning U.S. technical customer support and confidential healthcare record management.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="about" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-dior-border">
+            <div class="dior-card p-10 lg:p-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-xs font-mono tracking-[0.25em] text-dior-gold uppercase">The Atelier</span>
+                        <h2 class="text-4xl font-light editorial-title tracking-wide text-dior-ecru leading-[1.2]">
+                            Precision, Elegance, & Operational Rigor.
+                        </h2>
+                        <div class="w-16 h-[1px] bg-dior-gold"></div>
+                        <p class="text-xs text-dior-ecru/70 leading-relaxed font-light pt-2">
+                            Based in Calumpit, Bulacan, I combine rigorous operational accuracy with empathetic client communication. Whether troubleshooting technical issues for U.S. customers or auditing confidential medical charts under strict data privacy regulations, I thrive in environments requiring unwavering attention to detail.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-dior-surface p-8 border border-dior-border">
+                            <h3 class="text-xs uppercase tracking-[0.2em] text-dior-gold font-medium mb-3">Technical Support</h3>
+                            <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">Diagnostic troubleshooting, issue resolution, and KPI excellence for international clients.</p>
+                        </div>
+                        <div class="bg-dior-surface p-8 border border-dior-border">
+                            <h3 class="text-xs uppercase tracking-[0.2em] text-dior-gold font-medium mb-3">Healthcare Admin</h3>
+                            <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">Medical chart auditing, secure record handling, and HIPAA-aligned data privacy compliance.</p>
+                        </div>
+                        <div class="bg-dior-surface p-8 border border-dior-border">
+                            <h3 class="text-xs uppercase tracking-[0.2em] text-dior-gold font-medium mb-3">CRM & Documentation</h3>
+                            <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">Thorough interaction logging, digital workspace navigation, and cross-functional teamwork.</p>
+                        </div>
+                        <div class="bg-dior-surface p-8 border border-dior-border">
+                            <h3 class="text-xs uppercase tracking-[0.2em] text-dior-gold font-medium mb-3">Entrepreneurial Foundation</h3>
+                            <p class="text-xs text-dior-ecru/60 leading-relaxed font-light">BS Entrepreneurship graduate with strong business acumen and professional maturity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE TIMELINE -->
+        <section id="experience" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-dior-border">
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                <span class="text-xs font-mono tracking-[0.25em] text-dior-gold uppercase">Chronicles</span>
+                <h2 class="text-4xl font-light editorial-title text-dior-ecru tracking-wide">Ambot Experience</h2>
+                <p class="text-xs text-dior-ecru/60 font-light tracking-wider">Verified history in technical support and healthcare administrative support.</p>
+            </div>
+
+            <div class="space-y-10 max-w-4xl mx-auto">
+                <!-- Role 1 -->
+                <div class="dior-card p-10 lg:p-12 space-y-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dior-border pb-8">
+                        <div>
+                            <span class="text-xs font-mono text-dior-gold uppercase tracking-[0.25em]">US Electronics</span>
+                            <h3 class="text-2xl font-light editorial-title text-dior-ecru mt-2">Technical Support Representative</h3>
+                        </div>
+                        <span class="px-4 py-1.5 bg-dior-surface border border-dior-border text-xs font-mono text-dior-gold">August 2025 – September 2026</span>
+                    </div>
+
+                    <p class="text-xs text-dior-ecru/75 leading-relaxed font-light">
+                        Provided technical support and issue diagnostic services to U.S.-based customers while consistently exceeding quality, productivity, and customer satisfaction metrics.
+                    </p>
+
+                    <ul class="space-y-3 text-xs text-dior-ecru/75 font-light list-disc list-inside">
+                        <li>Diagnosed and resolved complex technical issues while meeting productivity KPIs.</li>
+                        <li>Recognized as a Top Agent for 3 consecutive months based on overall service performance.</li>
+                        <li>Handled up to 5 simultaneous chats while maintaining absolute accuracy and service quality.</li>
+                        <li>Documented customer interactions thoroughly in localized CRM systems.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2.5 pt-2">
+                        <span class="px-3 py-1 bg-dior-surface border border-dior-border text-[11px] font-mono text-dior-ecru/80">Technical Support</span>
+                        <span class="px-3 py-1 bg-dior-surface border border-dior-border text-[11px] font-mono text-dior-ecru/80">CRM Documentation</span>
+                        <span class="px-3 py-1 bg-dior-surface border border-dior-border text-[11px] font-mono text-dior-ecru/80">KPI Performance</span>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="dior-card p-10 lg:p-12 space-y-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dior-border pb-8">
+                        <div>
+                            <span class="text-xs font-mono text-dior-gold uppercase tracking-[0.25em]">APN CARE (Remote)</span>
+                            <h3 class="text-2xl font-light editorial-title text-dior-ecru mt-2">Freelance Healthcare Support</h3>
+                        </div>
+                        <span class="px-4 py-1.5 bg-dior-surface border border-dior-border text-xs font-mono text-dior-gold">January 2024 – January 2025</span>
+                    </div>
+
+                    <p class="text-xs text-dior-ecru/75 leading-relaxed font-light">
+                        Handled confidential patient documents, organized medical charts, and maintained rigorous digital records in strict compliance with data privacy standards.
+                    </p>
+
+                    <ul class="space-y-3 text-xs text-dior-ecru/75 font-light list-disc list-inside">
+                        <li>Handled confidential patient documents in compliance with data privacy standards.</li>
+                        <li>Organized medical charts and maintained precise digital records across secure platforms.</li>
+                        <li>Met or exceeded daily targets for document review, validation, and secure uploading.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2.5 pt-2">
+                        <span class="px-3 py-1 bg-dior-surface border border-dior-border text-[11px] font-mono text-dior-ecru/80">Healthcare Administration</span>
+                        <span class="px-3 py-1 bg-dior-surface border border-dior-border text-[11px] font-mono text-dior-ecru/80">Patient Records</span>
+                        <span class="px-3 py-1 bg-dior-surface border border-dior-border text-[11px] font-mono text-dior-ecru/80">Document Auditing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & EXPERTISE -->
+        <section id="skills" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-dior-border">
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                <span class="text-xs font-mono tracking-[0.25em] text-dior-gold uppercase">Curated Skillset</span>
+                <h2 class="text-4xl font-light editorial-title text-dior-ecru tracking-wide">Skills & Expertise</h2>
+                <p class="text-xs text-dior-ecru/60 font-light tracking-wider">Structured across support, administration, and digital tools.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="dior-card p-8 space-y-4">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-dior-gold">Technical Support</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Troubleshooting</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Issue Diagnosis</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">U.S. Customer Support</span>
+                    </div>
+                </div>
+
+                <div class="dior-card p-8 space-y-4">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-dior-gold">Customer Experience</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Customer Service</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">KPI Excellence</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Multitasking (5 Chats)</span>
+                    </div>
+                </div>
+
+                <div class="dior-card p-8 space-y-4">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-dior-gold">Healthcare Administration</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Patient Records</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Document Auditing</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Data Privacy & Security</span>
+                    </div>
+                </div>
+
+                <div class="dior-card p-8 space-y-4">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-dior-gold">Digital Tools</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Microsoft Office</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Google Workspace</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">CRM Systems</span>
+                    </div>
+                </div>
+
+                <div class="dior-card p-8 space-y-4 md:col-span-2">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.2em] text-dior-gold">Professional Strengths</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Confidential File Handling</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Problem-Solving</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Cross-functional Collaboration</span>
+                        <span class="px-3.5 py-1 bg-dior-surface border border-dior-border text-xs text-dior-ecru/90">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-dior-border">
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                <span class="text-xs font-mono tracking-[0.25em] text-dior-gold uppercase">Academia</span>
+                <h2 class="text-4xl font-light editorial-title text-dior-ecru tracking-wide">Educational Background</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="dior-card p-10 space-y-4">
+                    <span class="text-xs font-mono text-dior-gold tracking-widest">Graduated June 2025</span>
+                    <h3 class="text-xl font-light editorial-title text-dior-ecru">Bachelor of Science in Entrepreneurship</h3>
+                    <p class="text-xs text-dior-ecru/60 font-light">Colegio de Calumpit Inc. — Calumpit, Bulacan, Philippines</p>
+                </div>
+
+                <div class="dior-card p-10 space-y-4">
+                    <span class="text-xs font-mono text-dior-gold tracking-widest">Graduated April 2021</span>
+                    <h3 class="text-xl font-light editorial-title text-dior-ecru">Accountancy, Business and Management (ABM)</h3>
+                    <p class="text-xs text-dior-ecru/60 font-light">ATEC Technological College Inc.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-dior-border">
+            <div class="dior-card p-10 lg:p-20 text-center max-w-4xl mx-auto space-y-8">
+                <span class="text-xs font-mono tracking-[0.25em] text-dior-gold uppercase">Inquiries</span>
+                <h2 class="text-4xl sm:text-5xl font-light editorial-title text-dior-ecru tracking-wide">
+                    Have a role or project in mind? Let’s connect.
+                </h2>
+                <p class="text-xs sm:text-sm text-dior-ecru/70 max-w-xl mx-auto font-light leading-relaxed">
+                    Currently open to technical support, customer experience, and healthcare administrative opportunities. Reach out via email, phone, or copy my contact details.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-5 pt-4">
+                    <a href="mailto:mendozajenietah@gmail.com" class="px-8 py-4 bg-dior-ecru text-dior-black font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-dior-gold transition-all duration-300 flex items-center gap-3">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>mendozajenietah@gmail.com</span>
+                    </a>
+
+                    <button onclick="copyEmailToClipboard()" class="px-8 py-4 bg-transparent border border-dior-border text-dior-ecru font-mono text-[10px] uppercase tracking-[0.25em] hover:border-dior-gold hover:text-dior-gold transition-all duration-300 flex items-center gap-3">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Copy Email</span>
+                    </button>
+
+                    <a href="tel:+639772118631" class="px-8 py-4 bg-transparent border border-dior-border text-dior-ecru font-mono text-[10px] uppercase tracking-[0.25em] hover:border-dior-gold hover:text-dior-gold transition-all duration-300 flex items-center gap-3">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+63 977 2118 631</span>
+                    </a>
+                </div>
+
+                <div class="pt-10 border-t border-dior-border flex flex-wrap items-center justify-center gap-8 text-xs text-dior-ecru/60 font-mono tracking-wider">
+                    <span><i class="fa-solid fa-location-dot text-dior-gold mr-2"></i> Calumpit, Bulacan, Philippines</span>
+                    <span><i class="fa-brands fa-linkedin text-dior-gold mr-2"></i> LinkedIn Profile (Ready to link)</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-dior-border bg-dior-charcoal py-16 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div>
+                <a href="#home" class="flex items-center justify-center md:justify-start gap-4 mb-3">
+                    <div class="w-8 h-8 border border-dior-gold/40 text-dior-ecru flex items-center justify-center font-serif text-xs">JM</div>
+                    <span class="font-serif tracking-[0.25em] text-dior-ecru text-xs uppercase">Jenietah Mendoza</span>
+                </a>
+                <p class="text-[11px] text-dior-ecru/50 font-light font-mono tracking-wider">Technical Support & Customer Experience Specialist</p>
+            </div>
+
+            <div class="flex items-center gap-8 text-[11px] text-dior-ecru/70 uppercase tracking-[0.2em] font-mono">
+                <a href="#home" class="hover:text-dior-gold transition-colors">Home</a>
+                <a href="#about" class="hover:text-dior-gold transition-colors">Atelier</a>
+                <a href="#experience" class="hover:text-dior-gold transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-dior-gold transition-colors">Expertise</a>
+                <a href="#contact" class="hover:text-dior-gold transition-colors">Contact</a>
+            </div>
+
+            <div class="text-[11px] text-dior-ecru/40 font-mono tracking-widest">
+                &copy; <span id="current-year">2026</span> Jenietah Mendoza. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- RESUME MODAL & PRINT VIEW -->
+    <div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dior-black/95 backdrop-blur-md hidden">
+        <div class="dior-card w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-6 border-b border-dior-border flex items-center justify-between bg-dior-charcoal">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 border border-dior-gold/40 text-dior-ecru flex items-center justify-center font-serif text-xs">JM</div>
+                    <div>
+                        <h3 class="font-serif tracking-widest text-dior-ecru text-sm uppercase">Curriculum Vitae — Jenietah Mendoza</h3>
+                        <span class="text-[10px] text-dior-gold font-mono uppercase tracking-widest">Print-Ready Haute Edition</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="printResume()" class="px-5 py-2.5 bg-dior-gold text-dior-black font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-dior-ecru transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Save PDF</span>
+                    </button>
+                    <button onclick="closeResumeModal()" class="w-8 h-8 border border-dior-border text-dior-ecru hover:text-dior-gold flex items-center justify-center">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-10 overflow-y-auto space-y-10 bg-dior-black text-dior-ecru text-xs leading-relaxed font-light">
+                <div class="text-center border-b border-dior-border pb-8 space-y-3">
+                    <h1 class="text-3xl font-light editorial-title tracking-wide text-dior-ecru uppercase">Jenietah Mendoza</h1>
+                    <p class="text-dior-gold font-mono uppercase text-[11px] tracking-[0.2em]">Technical Support Representative | Customer Experience Specialist | Healthcare Administrative Support</p>
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-dior-ecru/60 font-mono pt-1 text-[11px]">
+                        <span>Calumpit, Bulacan, Philippines</span>
+                        <span>mendozajenietah@gmail.com</span>
+                        <span>+63 977 2118 631</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h2 class="text-xs font-mono uppercase tracking-[0.25em] text-dior-gold font-bold border-b border-dior-border pb-2">Professional Profile</h2>
+                    <p class="text-dior-ecru/80 leading-relaxed">
+                        Dedicated professional combining technical troubleshooting for U.S.-based customers, healthcare administration, medical chart auditing, and high-performance customer support. Recognized as a Top Agent for 3 consecutive months with expertise in managing simultaneous chat queues and maintaining strict data privacy compliance.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-xs font-mono uppercase tracking-[0.25em] text-dior-gold font-bold border-b border-dior-border pb-2">Work Experience</h2>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between font-normal text-dior-ecru">
+                            <span class="font-serif text-sm">Technical Support Representative — US Electronics</span>
+                            <span class="text-dior-gold font-mono text-[11px]">August 2025 – September 2026</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-1.5 text-dior-ecru/75 pl-1">
+                            <li>Provided technical support and issue diagnostic services to U.S.-based customers.</li>
+                            <li>Diagnosed and resolved complex technical issues while meeting quality and productivity KPIs.</li>
+                            <li>Recognized as a Top Agent for 3 consecutive months based on overall performance and customer service metrics.</li>
+                            <li>Handled up to 5 simultaneous chats while maintaining accuracy and service quality.</li>
+                            <li>Documented customer interactions in localized CRM systems.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2 pt-4">
+                        <div class="flex justify-between font-normal text-dior-ecru">
+                            <span class="font-serif text-sm">Freelance Healthcare Support — APN CARE (Remote)</span>
+                            <span class="text-dior-gold font-mono text-[11px]">January 2024 – January 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-1.5 text-dior-ecru/75 pl-1">
+                            <li>Handled confidential patient documents in compliance with data privacy standards.</li>
+                            <li>Organized medical charts and maintained digital records.</li>
+                            <li>Met or exceeded daily targets for document review, validation, and secure uploading.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-xs font-mono uppercase tracking-[0.25em] text-dior-gold font-bold border-b border-dior-border pb-2">Education</h2>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between font-normal text-dior-ecru">
+                                <span class="font-serif text-sm">Bachelor of Science in Entrepreneurship</span>
+                                <span class="text-dior-ecru/60 font-mono text-[11px]">Graduated June 2025</span>
+                            </div>
+                            <p class="text-dior-gold font-mono text-[11px]">Colegio de Calumpit Inc. — Calumpit, Bulacan, Philippines</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-normal text-dior-ecru">
+                                <span class="font-serif text-sm">Accountancy, Business and Management (ABM)</span>
+                                <span class="text-dior-ecru/60 font-mono text-[11px]">Graduated April 2021</span>
+                            </div>
+                            <p class="text-dior-gold font-mono text-[11px]">ATEC Technological College Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function copyEmailToClipboard() {
+            const email = 'mendozajenietah@gmail.com';
+            const textarea = document.createElement('textarea');
+            textarea.value = email;
+            textarea.style.position = 'fixed';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast('Email copied to clipboard successfully');
+            } catch (err) {
+                showToast('Failed to copy email.');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        function openResumeModal() {
+            document.getElementById('resume-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResumeModal() {
+            document.getElementById('resume-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function printResume() {
+            window.print();
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
